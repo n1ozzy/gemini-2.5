@@ -1,1 +1,114 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #12121F;
+  font-family: 'Roboto', sans-serif;
+  color: #e0e0e0;
+}
+
+#particleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+}
+
+.main-content-container {
+  padding: 2rem 2.5rem;
+  max-width: 900px;
+  margin: 3rem auto;
+  color: #f5f5f5;
+  background: linear-gradient(145deg, rgba(40, 30, 60, 0.85), rgba(30, 20, 50, 0.9));
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.main-content-container h1,
+.main-content-container h2 {
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.main-content-container h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding-bottom: 1rem;
+}
+
+.main-content-container h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 2.5rem;
+}
+
+.main-content-container p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #d0d0d0;
+  margin-bottom: 1.2rem;
+}
+
+.main-content-container mat-card {
+  background-color: rgba(45, 35, 75, 0.7);
+  margin-top: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #e0e0e0;
+}
+
+.main-content-container mat-card-header {
+  padding-bottom: 1rem;
+}
+
+.main-content-container mat-card-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+.main-content-container mat-card-subtitle {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+}
+
+.main-content-container mat-card-content {
+  font-size: 0.95rem;
+  color: #d0d0d0;
+  line-height: 1.6;
+}
+
+.main-content-container mat-card-content p {
+  margin-bottom: 0.8rem;
+}
+
+.firestore-data {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 4px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 300px;
+  overflow-y: auto;
+  font-size: 0.85rem;
+  color: #a5d6a7;
+}
+
+.error-message {
+  color: #ef9a9a;
+  font-weight: 500;
+}
