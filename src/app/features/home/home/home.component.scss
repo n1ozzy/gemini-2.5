@@ -1,0 +1,42 @@
+:host {
+    display: block;
+  }
+  
+  .home-intro-card {
+    // Kolor Deep Purple 800: #4527A0
+    // Używamy RGBA dla przezroczystości 0.75
+    background-color: rgba(69, 39, 160, 0.75);
+  }
+  
+  h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    // Kolor Amber 300: #FFD54F
+    color: #FFD54F;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  mat-divider {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  mat-list {
+    padding-top: 0;
+  }
+  
+  mat-list-item {
+    color: #d0d0d0;
+    height: 40px !important;
+  }
+  
+  mat-list-item mat-icon {
+    // Kolor Amber 400: #FFCA28 (ten sam co dla active-link)
+    color: #FFCA28;
+  }
+  
+  mat-card-actions {
+    padding: 8px 16px !important;
+  }
