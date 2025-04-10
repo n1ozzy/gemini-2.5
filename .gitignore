@@ -1,18 +1,64 @@
+# =========================================================================
+# Finalny plik .gitignore dla projektu Angular + Firebase Functions
+# Wersja uwzględniająca wszystkie ustalenia i poprawki.
+# =========================================================================
+
 # See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
-# Compiled output
+# =========================================================================
+# Kompilacja / Build / Pakiety wynikowe
+# =========================================================================
 /dist
 /tmp
 /out-tsc
 /bazel-out
+/.angular
+.firebase
+/coverage      # Raporty pokrycia kodu
 
-# Node
+# =========================================================================
+# Zależności i logi Node.js
+# =========================================================================
+# Główny katalog projektu
 /node_modules
-npm-debug.log
+npm-debug.log*
 yarn-error.log
+yarn-debug.log
 
-# IDEs and editors
+# Katalog Firebase Functions (jeśli używasz tam `npm install` i kompilacji TS)
+/functions/node_modules
+/functions/lib          # Domyślny katalog wyjściowy kompilacji TS w functions (zmień na /functions/dist jeśli używasz innego)
+/functions/dist         # Alternatywny/dodatkowy katalog wyjściowy w functions
+
+# =========================================================================
+# Pliki środowiskowe (NIGDY nie commituj kluczy API, haseł itp.!)
+# =========================================================================
+.env
+.env.*
+!.env.example # Pozwala commitować plik szablonowy/przykładowy
+
+# =========================================================================
+# Pliki generowane przez IDE / Edytory
+# =========================================================================
+# IntelliJ / WebStorm etc.
 .idea/
+environment.ts
+environment.prod.ts
+
+# VS Code (zachowuje Twoje ustawienia współdzielone)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Historia lokalna VS Code lub inne
+.history/
+*~
+*.sw[op] # Pliki swap Vima
+*.bak    # Pliki backupu
+
+# Inne edytory
 .project
 .classpath
 .c9/
@@ -20,23 +66,32 @@ yarn-error.log
 .settings/
 *.sublime-workspace
 
-# Visual Studio Code
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
-
-# Miscellaneous
-/.angular/cache
+# =========================================================================
+# Pliki specyficzne dla narzędzi / frameworków
+# =========================================================================
+# Sass cache
 .sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
+
+# Firebase
+.firebase/hosting.*.cache # Ignoruje TYLKO pliki cache hostingu Firebase CLI
+firebase-debug.log*       # Logi debugowania Firebase CLI
+# UWAGA: Cały katalog .firebase/ NIE jest ignorowany, aby .firebaserc było commitowane.
+
+# Inne
+/connect.lock  # Zakładając, że to plik generowany
+/libpeerconnection.log # Logi WebRTC
+testem.log             # Logi Testem
+
+# Typings (starsze podejście do definicji typów TS)
 /typings
 
-# System files
+# =========================================================================
+# Pliki systemowe (macOS, Windows)
+# =========================================================================
 .DS_Store
 Thumbs.db
+
+# =========================================================================
+# Ogólne logi
+# =========================================================================
+*.log

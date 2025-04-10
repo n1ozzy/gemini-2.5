@@ -1,0 +1,20 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // --- Reguły dla kolekcji 'test' ---
+    match /test/{docId} {
+      // Zezwól na odczyt TYLKO zalogowanym użytkownikom
+      allow read: if request.auth != null;
+      // Zapis na razie zablokowany
+      allow write: if false;
+    }
+
+    // --- Domyślne reguły dla WSZYSTKICH INNYCH dokumentów ---
+    // Dopasuj WSZYSTKO inne, co nie pasowało do /test/{docId}
+    match /{document=**} {  // <<< POPRAWIONA LINIA (usunięty '/', zmieniona nazwa)
+      allow read, write: if false;
+    }
+  }
+}
